@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aromiq Coorg — Premium Coffee from the Hills of Coorg</title>
+<meta name="description" content="Premium Coorg coffee — Instant, Flavoured, Filter & Signature blends. Direct from Coorg estates. Free shipping above ₹499. Order via WhatsApp.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#1c1007;
+  --bark:#2e1a0a;
+  --roast:#4a2510;
+  --soil:#6b3a1f;
+  --copper:#a0522d;
+  --amber:#c87941;
+  --gold:#d4a256;
+  --wheat:#e8c98a;
+  --cream:#f5ead6;
+  --linen:#faf5eb;
+  --white:#fffdf8;
+  --serif:'Playfair Display',serif;
+  --sans:'Jost',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--linen);color:var(--ink);overflow-x:hidden}
+
+/* ── NAV ── */
+#nav{position:fixed;top:0;width:100%;z-index:1000;padding:1.1rem 5%;display:flex;align-items:center;justify-content:space-between;transition:all .4s}
+#nav.scrolled{background:rgba(28,16,7,.96);backdrop-filter:blur(16px);padding:.75rem 5%;box-shadow:0 2px 30px rgba(0,0,0,.3)}
+.nav-logo{font-family:var(--serif);font-size:1.55rem;color:var(--wheat);text-decoration:none;letter-spacing:.04em}
+.nav-logo em{color:var(--gold);font-style:italic}
+.nav-logo small{display:block;font-size:.52rem;letter-spacing:.28em;color:rgba(232,201,138,.35);font-family:var(--sans);text-transform:uppercase;margin-top:-3px}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:rgba(245,234,214,.65);text-decoration:none;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--wheat)}
+.nav-right{display:flex;align-items:center;gap:.8rem}
+.nav-cart{display:flex;align-items:center;gap:.5rem;background:var(--amber);color:var(--ink);border:none;cursor:pointer;padding:.52rem 1rem;font-family:var(--sans);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;border-radius:2px;transition:background .2s}
+.nav-cart:hover{background:var(--gold)}
+.cart-badge{background:var(--ink);color:var(--wheat);border-radius:50%;width:17px;height:17px;display:flex;align-items:center;justify-content:center;font-size:.58rem;font-weight:500}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:3px}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--cream);transition:.3s}
+
+/* ── HERO ── */
+#hero{min-height:100vh;background:linear-gradient(152deg,#0a0400 0%,#1c1007 35%,var(--bark) 65%,var(--roast) 100%);display:flex;align-items:center;position:relative;overflow:hidden}
+.hero-glow{position:absolute;inset:0;background:radial-gradient(ellipse 55% 70% at 70% 50%,rgba(160,82,45,.13),transparent 55%),radial-gradient(ellipse 35% 45% at 10% 80%,rgba(212,162,86,.06),transparent 50%);pointer-events:none}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;align-items:center;width:100%;max-width:1200px;margin:0 auto;padding:9rem 5% 5rem;gap:3rem;position:relative;z-index:2}
+.hero-left{animation:fadeUp .9s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.hero-eyebrow{font-size:.62rem;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);margin-bottom:1.4rem;display:flex;align-items:center;gap:.75rem}
+.hero-eyebrow::before{content:'';width:28px;height:1px;background:var(--gold);flex-shrink:0}
+.hero-title{font-family:var(--serif);font-size:clamp(2.6rem,4.5vw,4.3rem);color:var(--cream);line-height:1.08;font-weight:400;margin-bottom:1rem}
+.hero-title em{font-style:italic;color:var(--wheat);display:block}
+.hero-desc{color:rgba(245,234,214,.48);font-size:.9rem;line-height:1.9;max-width:380px;margin-bottom:2.2rem;font-weight:300}
+.hero-ctas{display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:2.8rem}
+.btn-primary{display:inline-flex;align-items:center;gap:.5rem;background:var(--amber);color:var(--ink);text-decoration:none;padding:.82rem 1.8rem;font-size:.73rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;border:none;cursor:pointer;border-radius:2px;transition:background .2s,transform .18s;font-family:var(--sans)}
+.btn-primary:hover{background:var(--gold);transform:translateY(-1px)}
+.btn-ghost{display:inline-flex;align-items:center;background:transparent;color:rgba(245,234,214,.65);text-decoration:none;padding:.82rem 1.8rem;font-size:.73rem;letter-spacing:.14em;text-transform:uppercase;font-weight:400;border:1px solid rgba(245,234,214,.18);cursor:pointer;border-radius:2px;transition:all .2s;font-family:var(--sans)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--wheat)}
+.hero-stats{display:flex;gap:2.5rem;flex-wrap:wrap}
+.stat-num{font-family:var(--serif);font-size:2rem;color:var(--wheat);line-height:1}
+.stat-lbl{font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(232,201,138,.3);margin-top:.25rem}
+.hero-right{display:flex;align-items:center;justify-content:center;animation:fadeUp .9s .15s ease both}
+.hero-circle{width:300px;height:300px;border-radius:50%;background:radial-gradient(circle at 35% 35%,var(--roast),var(--bark) 55%,#0a0400);display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 0 1px rgba(212,162,86,.08)}
+.hero-circle::before{content:'';position:absolute;inset:-22px;border-radius:50%;border:1px solid rgba(212,162,86,.07)}
+.hero-circle::after{content:'';position:absolute;inset:-50px;border-radius:50%;border:1px solid rgba(212,162,86,.04)}
+.hero-icon{font-size:7rem;filter:drop-shadow(0 12px 30px rgba(0,0,0,.6))}
+.hero-badge{position:absolute;bottom:-10px;right:-10px;background:var(--gold);width:88px;height:88px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 8px 25px rgba(0,0,0,.35)}
+.hero-badge strong{font-family:var(--serif);font-size:.84rem;color:var(--ink);line-height:1.2}
+.hero-badge small{font-size:.48rem;letter-spacing:.09em;text-transform:uppercase;color:rgba(28,16,7,.55);font-family:var(--sans);margin-top:2px}
+
+/* ── TRUST BAR ── */
+#trust{background:var(--roast);padding:.95rem 0}
+.trust-bar{display:flex;justify-content:center;align-items:center;gap:2.5rem;flex-wrap:wrap;padding:0 5%}
+.trust-item{display:flex;align-items:center;gap:.5rem;color:rgba(232,201,138,.6);font-size:.66rem;letter-spacing:.09em;text-transform:uppercase}
+.trust-sep{width:1px;height:16px;background:rgba(212,162,86,.15);flex-shrink:0}
+
+/* ── SECTION BASE ── */
+section{padding:5.5rem 0}
+.container{max-width:1200px;margin:0 auto;padding:0 5%}
+.eyebrow{font-size:.62rem;letter-spacing:.35em;text-transform:uppercase;color:var(--copper);margin-bottom:.65rem;display:flex;align-items:center;gap:.65rem}
+.eyebrow::before{content:'';width:22px;height:1px;background:var(--copper);flex-shrink:0}
+.sec-title{font-family:var(--serif);font-size:clamp(1.85rem,3vw,2.7rem);color:var(--ink);line-height:1.14;margin-bottom:.8rem}
+.sec-title em{font-style:italic;color:var(--copper)}
+
+/* ══════════════════════════════════
+   PRODUCTS SECTION
+══════════════════════════════════ */
+#products{background:var(--cream)}
+
+/* Filter tabs */
+.prod-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2.5rem;flex-wrap:wrap;gap:1rem}
+.filter-tabs{display:flex;gap:.35rem;flex-wrap:wrap}
+.ftab{padding:.4rem 1.1rem;background:transparent;border:1px solid rgba(74,37,16,.16);color:var(--soil);font-family:var(--sans);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:all .2s}
+.ftab:hover,.ftab.active{background:var(--ink);color:var(--wheat);border-color:var(--ink)}
+
+/* Category row header */
+.cat-section{margin-bottom:3rem}
+.cat-section[hidden]{display:none}
+.cat-header{display:flex;align-items:center;gap:1rem;margin-bottom:1.4rem;padding-bottom:.9rem;border-bottom:1.5px solid rgba(74,37,16,.1)}
+.cat-icon{font-size:1.4rem;flex-shrink:0}
+.cat-title-text{font-family:var(--serif);font-size:1.35rem;color:var(--ink);font-weight:400}
+.cat-subtitle{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--copper);margin-top:.1rem}
+.cat-count{margin-left:auto;background:rgba(160,82,45,.1);color:var(--copper);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;padding:.25rem .7rem;border-radius:20px;border:1px solid rgba(160,82,45,.15)}
+
+/* Product grid */
+.pgrid{display:grid;gap:1.4rem}
+.pgrid.cols-2{grid-template-columns:repeat(2,1fr)}
+.pgrid.cols-3{grid-template-columns:repeat(3,1fr)}
+.pgrid.cols-4{grid-template-columns:repeat(4,1fr)}
+.pgrid.cols-7{grid-template-columns:repeat(4,1fr)}
+
+/* Product card */
+.pcard{background:var(--white);border-radius:6px;overflow:hidden;border:1px solid rgba(74,37,16,.06);transition:transform .3s,box-shadow .3s,border-color .2s;display:flex;flex-direction:column;position:relative;opacity:0;transform:translateY(16px)}
+.pcard.visible{opacity:1;transform:none;transition:opacity .5s ease,transform .5s ease,box-shadow .3s,border-color .2s}
+.pcard:hover{transform:translateY(-5px);box-shadow:0 16px 45px rgba(28,16,7,.11);border-color:rgba(160,82,45,.15)}
+.pcard-signature{border-color:rgba(212,162,86,.3);box-shadow:0 4px 20px rgba(212,162,86,.1)}
+.pcard-signature:hover{box-shadow:0 16px 45px rgba(212,162,86,.18)}
+
+/* Signature ribbon */
+.ribbon{position:absolute;top:0;left:0;right:0;background:var(--gold);color:var(--ink);font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;text-align:center;padding:.32rem;z-index:3;font-family:var(--sans)}
+
+/* Product image area — PLACEHOLDER */
+.pcard-img{position:relative;overflow:hidden;background:var(--roast)}
+.pcard-img.h-220{height:220px}
+.pcard-img.h-200{height:200px}
+.pcard-img.h-180{height:180px}
+.img-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;background:linear-gradient(145deg,var(--bark),var(--roast) 60%,var(--ink));cursor:pointer;transition:opacity .2s;position:relative}
+.img-placeholder:hover{opacity:.9}
+.img-placeholder .ph-icon{font-size:3.5rem;filter:drop-shadow(0 8px 20px rgba(0,0,0,.5))}
+.img-placeholder .ph-label{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(232,201,138,.4);font-family:var(--sans)}
+.img-placeholder .ph-upload{position:absolute;bottom:.6rem;right:.6rem;background:rgba(212,162,86,.15);border:1px solid rgba(212,162,86,.25);color:rgba(232,201,138,.6);font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .5rem;border-radius:2px;font-family:var(--sans)}
+/* When real image is added — just replace .img-placeholder with <img> */
+.pcard-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
+.pcard:hover .pcard-img img{transform:scale(1.05)}
+
+/* Badge on image */
+.img-badge{position:absolute;top:.75rem;left:.75rem;background:rgba(28,16,7,.7);backdrop-filter:blur(4px);color:var(--wheat);font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;padding:.22rem .6rem;border-radius:20px;font-weight:500;z-index:2;border:1px solid rgba(212,162,86,.18)}
+
+/* Card body */
+.pcard-body{padding:1.1rem 1.15rem 1.2rem;display:flex;flex-direction:column;flex:1}
+.pcard-cat{font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:var(--copper);margin-bottom:.2rem}
+.pcard-name{font-family:var(--serif);font-size:1.1rem;color:var(--ink);line-height:1.2;margin-bottom:.15rem}
+.pcard-sub{font-size:.63rem;color:rgba(107,58,31,.5);letter-spacing:.06em;margin-bottom:.65rem;text-transform:uppercase}
+.pcard-tags{display:flex;gap:.3rem;flex-wrap:wrap;margin-bottom:.7rem}
+.ptag{font-size:.54rem;letter-spacing:.04em;background:rgba(160,82,45,.07);color:var(--copper);padding:.18rem .52rem;border-radius:20px;border:1px solid rgba(160,82,45,.12)}
+.pcard-desc{font-size:.76rem;color:var(--soil);line-height:1.72;font-weight:300;margin-bottom:.9rem;flex:1}
+
+/* Variant size buttons */
+.pcard-variants{display:flex;gap:.35rem;flex-wrap:wrap;margin-bottom:.9rem}
+.vbtn{padding:.3rem .75rem;background:transparent;border:1px solid rgba(74,37,16,.15);color:var(--soil);font-family:var(--sans);font-size:.62rem;letter-spacing:.06em;cursor:pointer;border-radius:2px;transition:all .2s}
+.vbtn:hover,.vbtn.active{background:var(--ink);color:var(--wheat);border-color:var(--ink)}
+
+/* Card footer */
+.pcard-foot{display:flex;align-items:center;justify-content:space-between;margin-top:auto;gap:.5rem}
+.pcard-price{font-family:var(--serif);font-size:1.2rem;color:var(--copper);white-space:nowrap}
+.pcard-price small{font-size:.64em;color:rgba(107,58,31,.45);font-family:var(--sans);font-weight:300}
+.btn-cart{background:var(--ink);color:var(--wheat);border:none;cursor:pointer;padding:.5rem .9rem;font-family:var(--sans);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;border-radius:2px;transition:background .2s,transform .15s;white-space:nowrap;flex-shrink:0}
+.btn-cart:hover{background:var(--roast)}
+.btn-cart:active{transform:scale(.97)}
+
+/* ── WHY US ── */
+#why{background:var(--ink)}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.5rem}
+.why-card{padding:1.5rem;border:1px solid rgba(212,162,86,.1);border-radius:4px;transition:border-color .3s,transform .3s}
+.why-card:hover{border-color:rgba(212,162,86,.28);transform:translateY(-3px)}
+.wicon{font-size:1.85rem;margin-bottom:.7rem}
+.why-card h3{font-family:var(--serif);font-size:1.05rem;color:var(--wheat);margin-bottom:.4rem}
+.why-card p{font-size:.76rem;color:rgba(245,234,214,.38);line-height:1.8;font-weight:300}
+
+/* ── REVIEWS ── */
+#reviews{background:var(--linen)}
+.rvgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:2.2rem}
+.rcard{background:var(--white);padding:1.5rem;border-radius:4px;border-left:3px solid var(--amber)}
+.rcard-stars{color:var(--amber);font-size:.8rem;margin-bottom:.65rem}
+.rcard-text{font-family:var(--serif);font-size:.94rem;color:var(--soil);line-height:1.85;font-style:italic;margin-bottom:.8rem}
+.rcard-author{font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--copper)}
+.rcard-prod{font-size:.58rem;color:rgba(107,58,31,.38);margin-top:.12rem}
+
+/* ── QUIZ ── */
+#quiz{background:var(--bark);padding:4.5rem 0}
+.qwrap{max-width:560px;margin:0 auto;text-align:center;padding:0 5%}
+.qwrap .sec-title{color:var(--cream)}
+.qwrap .eyebrow{justify-content:center;color:var(--gold)}
+.qwrap .eyebrow::before{background:var(--gold)}
+.qwrap>p{color:rgba(245,234,214,.45);font-size:.85rem;line-height:1.85;margin-bottom:1.6rem;font-weight:300}
+.qsteps{display:none}
+.qprog{display:flex;gap:.4rem;justify-content:center;margin-bottom:1.3rem}
+.qdot{width:7px;height:7px;border-radius:50%;background:rgba(245,234,214,.14);transition:background .3s}
+.qdot.done{background:var(--gold)}
+.qqtext{font-family:var(--serif);font-size:1.2rem;color:var(--cream);margin-bottom:1.2rem;font-style:italic}
+.qopts{display:flex;flex-direction:column;gap:.55rem}
+.qopt{background:rgba(245,234,214,.05);border:1px solid rgba(245,234,214,.1);color:rgba(245,234,214,.72);padding:.75rem 1rem;font-family:var(--sans);font-size:.8rem;cursor:pointer;border-radius:2px;transition:all .2s;text-align:left}
+.qopt:hover{background:rgba(212,162,86,.1);border-color:rgba(212,162,86,.25);color:var(--wheat)}
+.qresult{display:none;background:rgba(245,234,214,.05);border:1px solid rgba(212,162,86,.18);border-radius:4px;padding:1.7rem;margin-top:1rem}
+.qresult h3{font-family:var(--serif);font-size:1.3rem;color:var(--wheat);margin-bottom:.4rem}
+.qresult p{color:rgba(245,234,214,.55);font-size:.82rem;line-height:1.8;margin-bottom:1rem}
+
+/* ── BULK ── */
+#bulk{background:var(--roast);padding:0}
+.bulk-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1200px;margin:0 auto;padding:5rem 5%}
+.bulk-text .sec-title{color:var(--cream)}
+.bulk-text .eyebrow{color:var(--gold)}
+.bulk-text .eyebrow::before{background:var(--gold)}
+.bulk-text>p{color:rgba(245,234,214,.5);line-height:1.9;font-size:.87rem;margin-bottom:1.4rem;font-weight:300}
+.bfeats{display:flex;flex-direction:column;gap:.55rem;margin-bottom:1.7rem}
+.bfeat{font-size:.78rem;color:rgba(245,234,214,.6);display:flex;gap:.7rem;align-items:flex-start}
+.bfeat::before{content:'✓';color:var(--gold);flex-shrink:0}
+.bform{background:var(--linen);border-radius:4px;padding:1.8rem}
+.bform h3{font-family:var(--serif);font-size:1.05rem;color:var(--ink);margin-bottom:1rem}
+.fg{margin-bottom:.85rem}
+.fg label{display:block;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--soil);margin-bottom:.3rem;font-weight:500}
+.fg input,.fg textarea,.fg select{width:100%;background:var(--white);border:1px solid rgba(74,37,16,.1);color:var(--ink);padding:.65rem .85rem;font-family:var(--sans);font-size:.83rem;border-radius:2px;outline:none;transition:border-color .2s}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--amber)}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+
+/* ── CONTACT ── */
+#contact{background:var(--white)}
+.cgrid{display:grid;grid-template-columns:1fr 1.15fr;gap:4rem;align-items:start}
+.cinfo>p{color:var(--soil);line-height:1.9;font-size:.88rem;margin-bottom:1.7rem;font-weight:300}
+.cdetail{display:flex;gap:.8rem;align-items:flex-start;margin-bottom:.9rem}
+.cdlbl{font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:.1rem}
+.cdval{font-size:.83rem;color:var(--soil);font-weight:300}
+.btn-wa{display:inline-flex;align-items:center;gap:.5rem;background:#25D366;color:#fff;text-decoration:none;padding:.75rem 1.5rem;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;border-radius:2px;margin-top:1rem;transition:background .2s;font-family:var(--sans)}
+.btn-wa:hover{background:#1fb855}
+.cfwrap{background:var(--linen);padding:1.8rem;border-radius:4px}
+.cfwrap h3{font-family:var(--serif);font-size:1.05rem;color:var(--ink);margin-bottom:1rem}
+.cfok{display:none;background:rgba(37,211,102,.08);border:1px solid rgba(37,211,102,.22);border-radius:2px;padding:.75rem;font-size:.8rem;color:#1a7a40;text-align:center;margin-top:.75rem}
+
+/* ── NEWSLETTER ── */
+#nl{background:var(--ink);padding:3.5rem 0}
+.nlwrap{max-width:500px;margin:0 auto;text-align:center;padding:0 5%}
+.nlwrap h2{font-family:var(--serif);font-size:1.75rem;color:var(--cream);margin-bottom:.4rem}
+.nlwrap>p{color:rgba(245,234,214,.38);font-size:.82rem;line-height:1.8;margin-bottom:1.2rem;font-weight:300}
+.nlform{display:flex;gap:.4rem}
+.nlinput{flex:1;background:rgba(245,234,214,.05);border:1px solid rgba(245,234,214,.1);color:var(--cream);padding:.72rem .9rem;font-family:var(--sans);font-size:.82rem;border-radius:2px;outline:none;transition:border-color .2s}
+.nlinput:focus{border-color:var(--amber)}
+.nlinput::placeholder{color:rgba(245,234,214,.22)}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);padding:2.8rem 5% 1.6rem;border-top:1px solid rgba(245,234,214,.05)}
+.ft-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.2rem}
+.ft-brand p{color:rgba(245,234,214,.28);font-size:.74rem;line-height:1.8;margin-top:.6rem;font-weight:300;max-width:210px}
+.ft-col h4{font-family:var(--serif);font-size:.9rem;color:var(--wheat);margin-bottom:.85rem;font-weight:400}
+.ft-col ul{list-style:none}
+.ft-col ul li{margin-bottom:.5rem}
+.ft-col ul li a{color:rgba(245,234,214,.28);text-decoration:none;font-size:.73rem;transition:color .2s}
+.ft-col ul li a:hover{color:var(--wheat)}
+.ft-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:1.7rem;border-top:1px solid rgba(245,234,214,.05);flex-wrap:wrap;gap:.8rem}
+.ft-bottom p{color:rgba(245,234,214,.18);font-size:.68rem}
+.ft-social{display:flex;gap:1rem}
+.ft-social a{color:rgba(245,234,214,.22);text-decoration:none;font-size:.68rem;transition:color .2s}
+.ft-social a:hover{color:var(--wheat)}
+
+/* ── CART DRAWER ── */
+.cart-ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:2000;backdrop-filter:blur(4px)}
+.cart-ov.open{display:block}
+.cart-panel{position:absolute;right:0;top:0;bottom:0;width:400px;max-width:96vw;background:var(--white);display:flex;flex-direction:column;box-shadow:-18px 0 55px rgba(0,0,0,.22)}
+.cart-hd{padding:1.2rem;background:var(--ink);display:flex;align-items:center;justify-content:space-between}
+.cart-hd h2{font-family:var(--serif);color:var(--wheat);font-size:1.15rem;font-weight:400}
+.cart-cls{background:none;border:none;color:rgba(245,234,214,.5);font-size:1.3rem;cursor:pointer;line-height:1;transition:color .2s}
+.cart-cls:hover{color:var(--cream)}
+.cart-body{flex:1;overflow-y:auto;padding:1rem}
+.cart-empty{text-align:center;padding:2.5rem 1rem;color:rgba(107,58,31,.42)}
+.cart-empty p{font-size:2.5rem;margin-bottom:.6rem}
+.citem{display:flex;gap:.75rem;align-items:center;padding:.75rem 0;border-bottom:1px solid rgba(74,37,16,.06)}
+.citem-info{flex:1}
+.citem-name{font-size:.84rem;color:var(--ink);line-height:1.3}
+.citem-sub{font-size:.64rem;color:rgba(107,58,31,.42);margin-top:.1rem}
+.citem-qty{display:flex;align-items:center;gap:.3rem}
+.qbtn{width:23px;height:23px;background:var(--cream);border:1px solid rgba(74,37,16,.1);color:var(--ink);cursor:pointer;font-size:.9rem;border-radius:2px;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.qbtn:hover{background:var(--wheat)}
+.qval{font-size:.8rem;min-width:16px;text-align:center;color:var(--ink)}
+.citem-price{font-family:var(--serif);font-size:.92rem;color:var(--copper);white-space:nowrap}
+.cart-ft{padding:1rem;border-top:1px solid rgba(74,37,16,.08)}
+.cart-total-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:.85rem}
+.cart-total-row span{font-family:var(--serif);font-size:.95rem;color:var(--ink)}
+.cart-total-row strong{font-family:var(--serif);font-size:1.35rem;color:var(--copper);font-weight:400}
+.cart-upi{background:var(--linen);border-radius:2px;padding:.7rem .85rem;margin-bottom:.65rem}
+.cart-upi p{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soil);margin-bottom:.35rem}
+.utags{display:flex;gap:.35rem}
+.utag{background:var(--cream);color:var(--soil);font-size:.58rem;padding:.18rem .5rem;border-radius:2px;border:1px solid rgba(74,37,16,.1)}
+.btn-checkout{width:100%;background:#25D366;color:#fff;border:none;cursor:pointer;padding:.88rem;font-family:var(--sans);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;font-weight:500;border-radius:2px;transition:background .2s;display:flex;align-items:center;justify-content:center;gap:.5rem}
+.btn-checkout:hover{background:#1fb855}
+
+/* ── PROMO POPUP ── */
+.promo-ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.62);z-index:3000;align-items:center;justify-content:center}
+.promo-ov.open{display:flex}
+.promo-box{background:var(--white);max-width:400px;width:92%;border-radius:4px;overflow:hidden;position:relative}
+.promo-top{background:var(--bark);padding:1.8rem;text-align:center}
+.promo-top h2{font-family:var(--serif);font-size:1.9rem;color:var(--cream);font-weight:400}
+.promo-top h2 em{color:var(--gold);font-style:italic}
+.promo-top p{color:rgba(245,234,214,.5);font-size:.8rem;margin-top:.3rem}
+.promo-body{padding:1.3rem 1.7rem}
+.promo-body>p{font-size:.82rem;color:var(--soil);line-height:1.7;margin-bottom:.85rem;text-align:center;font-weight:300}
+.promo-code{background:var(--cream);border:1.5px dashed var(--amber);padding:.7rem;text-align:center;border-radius:2px;margin-bottom:.85rem}
+.promo-code strong{font-family:var(--serif);font-size:1.45rem;color:var(--copper);letter-spacing:.1em}
+.promo-code small{display:block;font-size:.6rem;color:var(--soil);margin-top:.12rem}
+.promo-cls{position:absolute;top:.8rem;right:.8rem;background:rgba(245,234,214,.1);border:none;color:var(--cream);width:25px;height:25px;border-radius:50%;cursor:pointer;font-size:.88rem;display:flex;align-items:center;justify-content:center}
+.promo-skip{display:block;text-align:center;font-size:.66rem;color:rgba(107,58,31,.35);cursor:pointer;margin-top:.45rem}
+
+/* ── TOAST ── */
+.toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(60px);background:var(--ink);color:var(--wheat);padding:.65rem 1.7rem;border-radius:2px;font-size:.78rem;z-index:5000;transition:transform .3s;border-left:3px solid var(--gold);white-space:nowrap}
+.toast.show{transform:translateX(-50%) translateY(0)}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ── MOBILE ── */
+@media(max-width:1050px){.pgrid.cols-4,.pgrid.cols-7{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:860px){
+  #nav{padding:.85rem 5%}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .hero-inner{grid-template-columns:1fr;gap:2rem;padding:8rem 5% 4rem}
+  .hero-circle{width:220px;height:220px}
+  .hero-stats{gap:1.8rem}
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+  .rvgrid{grid-template-columns:1fr}
+  .bulk-inner,.cgrid,.ft-top{grid-template-columns:1fr;gap:2rem}
+  .ft-top{grid-template-columns:1fr 1fr}
+  .nlform{flex-direction:column}
+  .pgrid.cols-2{grid-template-columns:1fr 1fr}
+  .pgrid.cols-3,.pgrid.cols-4,.pgrid.cols-7{grid-template-columns:repeat(2,1fr)}
+  .prod-header{flex-direction:column;align-items:flex-start}
+  .frow{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+  .hero-title{font-size:2.3rem}
+  section{padding:4rem 0}
+  .pgrid.cols-2,.pgrid.cols-3,.pgrid.cols-4,.pgrid.cols-7{grid-template-columns:1fr}
+  .ft-top{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
+  .rvgrid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav id="nav">
+  <a href="#hero" class="nav-logo">Aromiq<em>.co</em><small>Coorg Coffee</small></a>
+  <ul class="nav-links">
+    <li><a href="#products">Shop</a></li>
+    <li><a href="#why">Our Promise</a></li>
+    <li><a href="#quiz">Coffee Quiz</a></li>
+    <li><a href="#bulk">Bulk Orders</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="nav-cart" onclick="openCart()">🛒 Cart <span class="cart-badge" id="cBadge">0</span></button>
+    <button class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Single Origin · Coorg & Chikmagalur · Est. 2024</div>
+      <h1 class="hero-title">From the Hills<br>of Coorg,<br><em>Pure in Every Sip.</em></h1>
+      <p class="hero-desc">Premium Instant, Flavoured, Filter and Signature coffees — crafted from hand-picked Arabica & Robusta beans from India's finest coffee estates.</p>
+      <div class="hero-ctas">
+        <a href="#products" class="btn-primary">Shop All Coffees →</a>
+        <a href="#quiz" class="btn-ghost">Find My Match</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="stat-num">13</div><div class="stat-lbl">Products</div></div>
+        <div><div class="stat-num">7</div><div class="stat-lbl">Flavours</div></div>
+        <div><div class="stat-num">100%</div><div class="stat-lbl">Natural Beans</div></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-circle" style="position:relative">
+        <div class="hero-icon">☕</div>
+        <div class="hero-badge"><strong>Estate<br>Grade</strong><small>Premium</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TRUST BAR ══ -->
+<div id="trust">
+  <div class="trust-bar">
+    <div class="trust-item">⭐ Free shipping above ₹499</div>
+    <div class="trust-sep"></div>
+    <div class="trust-item">📦 Ships within 24 hours</div>
+    <div class="trust-sep"></div>
+    <div class="trust-item">🔒 Secure UPI payment</div>
+    <div class="trust-sep"></div>
+    <div class="trust-item">🌿 Direct from Coorg estates</div>
+    <div class="trust-sep"></div>
+    <div class="trust-item">🚚 Pan India delivery</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     PRODUCTS
+══════════════════════════════ -->
+<section id="products">
+  <div class="container">
+
+    <div class="prod-header">
+      <div>
+        <div class="eyebrow">Our Collection</div>
+        <h2 class="sec-title">Shop by <em>Category</em></h2>
+      </div>
+      <div class="filter-tabs">
+        <button class="ftab active" onclick="filterCat('all',this)">All Products</button>
+        <button class="ftab" onclick="filterCat('instant',this)">Instant</button>
+        <button class="ftab" onclick="filterCat('flavoured',this)">Flavoured</button>
+        <button class="ftab" onclick="filterCat('filter',this)">Filter</button>
+        <button class="ftab" onclick="filterCat('signature',this)">Signature</button>
+      </div>
+    </div>
+
+    <!-- ━━━ CATEGORY 1: INSTANT COFFEE ━━━ -->
+    <div class="cat-section" id="cat-instant">
+      <div class="cat-header">
+        <div class="cat-icon">☕</div>
+        <div>
+          <div class="cat-title-text">Instant Coffee</div>
+          <div class="cat-subtitle">Bold · Ready in seconds · Arabica & Robusta</div>
+        </div>
+        <div class="cat-count">2 products</div>
+      </div>
+      <div class="pgrid cols-2">
+
+        <!-- Coorg Special Extra Strong -->
+        <div class="pcard" data-cat="instant">
+          <div class="pcard-img h-220">
+            <div class="img-placeholder" onclick="uploadImg(this)">
+              <div class="ph-icon">☕</div>
+              <div class="ph-label">Coorg Special Extra Strong</div>
+              <div class="ph-upload">+ Add Photo</div>
+            </div>
+            <div class="img-badge">Extra Strong</div>
+          </div>
+          <div class="pcard-body">
+            <div class="pcard-cat">Instant Coffee</div>
+            <div class="pcard-name">Coorg Special</div>
+            <div class="pcard-sub">Extra Strong · 100g</div>
+            <div class="pcard-tags">
+              <span class="ptag">Extra Strong</span>
+              <span class="ptag">Arabica & Robusta</span>
+              <span class="ptag">No Added Sugar</span>
+              <span class="ptag">Gluten Free</span>
+            </div>
+            <p class="pcard-desc">Bold, powerful Arabica & Robusta blend from Coorg's finest estates. Hand-picked beans, zero added sugar, premium quality with a rich crema. For those who want their coffee fierce and unapologetic.</p>
+            <div class="pcard-foot">
+              <div class="pcard-price" id="price-cs-strong">₹350 <small>/ 100g</small></div>
+              <button class="btn-cart" onclick="addCart('Coorg Special Extra Strong','instant',350,'100g')">+ Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coorg Special Normal -->
+        <div class="pcard" data-cat="instant">
+          <div class="pcard-img h-220">
+            <div class="img-placeholder" onclick="uploadImg(this)">
+              <div class="ph-icon">☕</div>
+              <div class="ph-label">Coorg Special Normal</div>
+              <div class="ph-upload">+ Add Photo</div>
+            </div>
+            <div class="img-badge">Smooth Blend</div>
+          </div>
+          <div class="pcard-body">
+            <div class="pcard-cat">Instant Coffee</div>
+            <div class="pcard-name">Coorg Special</div>
+            <div class="pcard-sub">Normal Blend · 100g</div>
+            <div class="pcard-tags">
+              <span class="ptag">Smooth</span>
+              <span class="ptag">Arabica & Robusta</span>
+              <span class="ptag">Premium Quality</span>
+              <span class="ptag">Gluten Free</span>
+            </div>
+            <p class="pcard-desc">Smooth, perfectly balanced Arabica & Robusta from Coorg's premium estates. Rich aroma, creamy finish, gluten-free. The ideal everyday instant coffee for those who appreciate quality in every cup.</p>
+            <div class="pcard-foot">
+              <div class="pcard-price">₹350 <small>/ 100g</small></div>
+              <button class="btn-cart" onclick="addCart('Coorg Special Normal','instant',350,'100g')">+ Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ━━━ CATEGORY 2: FLAVOURED COFFEE ━━━ -->
+    <div class="cat-section" id="cat-flavoured">
+      <div class="cat-header">
+        <div class="cat-icon">🍫</div>
+        <div>
+          <div class="cat-title-text">Flavoured Instant Coffee</div>
+          <div class="cat-subtitle">7 unique flavours · Available in 50g & 100g · Arabica blend</div>
+        </div>
+        <div class="cat-count">7 flavours · 14 options</div>
+      </div>
+      <div class="pgrid cols-4">
+
+        <!-- Dark Chocolate -->
+        <div class="pcard" data-cat="flavoured">
+          <div class="pcard-img h-200">
+            <div class="img-placeholder" onclick="uploadImg(this)">
+              <div class="ph-icon">🍫</div>
+              <div class="ph-label">Dark Chocolate</div>
+              <div class="ph-upload">+ Add Photo</div>
+            </div>
+            <div class="img-badge">Flavoured</div>
+          </div>
+          <div class="pcard-body">
+            <div class="pcard-cat">Flavoured Coffee</div>
+            <div class="pcard-name">Dark Chocolate</div>
+            <div class="pcard-sub">Instant Coffee</div>
+            <div class="pcard-tags"><span class="ptag">Gluten Free</span><span class="ptag">100% Arabica</span></div>
+            <p class="pcard-desc">Rich Coorg Arabica meets bold dark chocolate. Deep cocoa notes with a smooth, indulgent finish.</p>
+            <div class="pcard-variants">
+              <button class="vbtn active" onclick="selSize(this,'dark-choc',280,'50g')">₹280 / 50g</button>
+              <button class="vbtn" onclick="selSize(this,'dark-choc',480,'100g')">₹480 / 100g</button>
+            </div>
+            <div class="pcard-foot">
+              <div class="pcard-price" id="price-dark-choc">₹280 <small>/ 50g</small></div>
+              <button class="btn-cart" id="cart-dark-choc" onclick="addCart('Dark Chocolate Coffee','flavoured',280,'50g')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mint -->
+        <div class="pcard" data-cat="flavoured">
+          <div class="pcard-img h-200">
+            <div class="img-placeholder" onclick="uploadImg(this)">
+              <div class="ph-icon">🌿</div>
+              <div class="ph-label">Cocoa Mint</div>
+              <div class="ph-upload">+ Add Photo</div>
+            </div>
+            <div class="img-badge">Flavoured</div>
+          </div>
+          <div class="pcard-body">
+            <div class="pcard-cat">Flavoured Coffee</div>
+            <div class="pcard-name">Cocoa Mint</div>
+            <div class="pcard-sub">Instant Coffee</div>
+            <div class="pcard-tags"><span class="ptag">Gluten Free</span><span class="ptag">100% Arabica</span></div>
+            <p class="pcard-desc">Cool cocoa mint meets bold Coorg Arabica. Refreshing, smooth, and perfectly balanced — great hot or iced.</p>
+            <div class="pcard-variants">
+              <button class="vbtn active" onclick="selSize(this,'mint',280,'50g')">₹280 / 50g</button>
+              <button class="vbtn" onclick="selSize(this,'mint',480,'100g')">₹480 / 100g</button>
+            </div>
+            <div class="pcard-foot">
+              <div class="pcard-price" id="price-mint">₹280 <small>/ 50g</small></div>
+              <button class="btn-cart" id="cart-mint" onclick="addCart('Cocoa Mint Coffee','flavoured',280,'50g')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Raspberry -->
+        <div class="pcard" data-cat="flavoured">
+          <div class="pcard-img h-200">
+            <div class="img-placeholder" onclick="uploadImg(this)">
+              <div class="ph-icon">🍓</div>
+              <div class="ph-label">Fruity Raspberry</div>
+              <div class="ph-upload">+ Add Photo</div>
+            </div>
+            <div class="img-badge">Flavoured</div>
+          </div>
+          <div class="pcard-body">
+            <div class="pcard-cat">Flavoured Coffee</div>
+            <div class="pcard-name">Fruity Raspberry</div>
+            <div class="pcard-sub">Instant Coffee</div>
+            <div class="pcard-tags"><span class="ptag">Gluten Free</span><span class="ptag">100% Arabica</span></div>
+            <p class="pcard-desc">Bold Coorg Arabica with bright, fruity raspberry. Vibrant and smooth — a must-try for adventurous coffee lovers.</p>
+            <div class="pcard-variants">
+              <button class="vbtn active" onclick="selSize(this,'rasp',280,'50g')">₹280 / 50g</button>
+              <button class="vbtn" onclick="selSize(this,'rasp',480,'100g')">₹480 / 100g</button>
+            </div>
+            <div class="pcard-foot">
+              <div class="pcard-price" id="price-rasp">₹280 <small>/ 50g</small></div>
+              <button class="btn-cart" id="cart-rasp" onclick="addCart('Fruity Raspberry Coffee','flavoured',280,'50g')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hazelnut -->
+        <div class="pcard" data-cat="flavoured">
+          <div class="pcard-img h-200">
+            <div class="img-placeholder" onclick="uploadImg(this)">
+              <div class="ph-icon">🌰</div>
+              <div class="ph-label">Nutty Hazelnut</div>
+              <div class="ph-upload">+ Add Photo</div>
+            </div>
+            <div class="img-badge">Flavoured</div>
+          </div>
+          <div class="pcard-body">
+            <div class="pcard-cat">Flavoured Coffee</div>
+            <div class="pcard-name">Nutty Hazelnut</div>
+            <div class="pcard-sub">Instant Coffee</div>
+            <div class="pcard-tags"><span class="ptag">Gluten Free</span><span class="ptag">100% Arabica</span></div>
+            <p class="pcard-desc">Rich Coorg Arabica with warm, buttery roasted hazelnut. Bold, smooth and utterly delicious in every sip.</p>
+            <div class="pcard-variants">
+              <button class="vbtn active" onclick="selSize(this,'hazel',280,'50g')">₹280 / 50g</button>
+              <button class="vbtn" onclick="selSize(this,'hazel',480,'100g')">₹480 / 100g</button>
+            </div>
+            <div class="pcard-foot">
+              <div class="pcard-price" id="price-hazel">₹280 <small>/ 50g</small></div>
+              <button class="btn-cart" id="cart-hazel" onclick="addCart('Nutty Hazelnut Coffee','flavoured',280,'50g')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Butterscotch -->
+        <div class="pcard" data-cat="flavoured">
+          <div class="pcard-img h-200">
+            <div class="img-placeholder" onclick="uploadImg(this)">
+              <div class="ph-icon">🍯</div>
+              <div class="ph-label">Creamy Butterscotch</div>
+              <div class="ph-upload">+ Add Photo</div>
+            </div>
+            <div class="img-badge">Flavoured</div>
+          </div>
+          <div class="pcard-body">
+            <div class="pcard-cat">Flavoured Coffee</div>
+            <div class="pcard-name">Creamy Butterscotch</div>
+            <div class="pcard-sub">Instant Coffee</div>
+            <div class="pcard-tags"><span class="ptag">Gluten Free</span><span class="ptag">100% Arabica</span></div>
+            <p class="pcard-desc">Sweet, creamy butterscotch meets bold Coorg coffee. A rich, comforting cup with irresistible golden caramel warmth.</p>
+            <div class="pcard-variants">
+              <button class="vbtn active" onclick="selSize(this,'butter',280,'50g')">₹280 / 50g</button>
+              <button class="vbtn" onclick="selSize(this,'butter',480,'100g')">₹480 / 100g</button>
+            </div>
+            <div class="pcard-foot">
+              <div class="pcard-price" id="price-butter">₹280 <small>/ 50g</small></div>
+              <button class="btn-cart" id="cart-butter" onclick="addCart('Creamy Butterscotch Coffee','flavoured',280,'50g')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- French Vanilla -->
+        <div class="pcard" data-cat="flavoured">
+          <div class="pcard-img h-200">
+            <div class="img-placeholder" onclick="uploadImg(this)">
+              <div class="ph-icon">🍦</div>
+              <div class="ph-label">French Vanilla</div>
+              <div class="ph-upload">+ Add Photo</div>
+            </div>
+            <div class="img-badge">Flavoured</div>
+          </div>
+          <div class="pcard-body">
+            <div class="pcard-cat">Flavoured Coffee</div>
+            <div class="pcard-name">French Vanilla</div>
+            <div class="pcard-sub">Instant Coffee</div>
+            <div class="pcard-tags"><span class="ptag">Gluten Free</span><span class="ptag">100% Arabica</span></div>
+            <p class="pcard-desc">Aromatic Coorg Arabica with classic French vanilla warmth. Smooth, creamy and effortlessly elegant — a bestselling favourite.</p>
+            <div class="pcard-variants">
+              <button class="vbtn active" onclick="selSize(this,'vanilla',280,'50g')">₹280 / 50g</button>
+              <button class="vbtn" onclick="selSize(this,'vanilla',480,'100g')">₹480 / 100g</button>
+            </div>
+            <div class="pcard-foot">
+              <div class="pcard-price" id="price-vanilla">₹280 <small>/ 50g</small></div>
+              <button class="btn-cart" id="cart-vanilla" onclick="addCart('French Vanilla Coffee','flavoured',280,'50g')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Caramel -->
+        <div class="pcard" data-cat="flavoured">
+          <div class="pcard-img h-200">
+            <div class="img-placeholder" onclick="uploadImg(this)">
+              <div class="ph-icon">🍮</div>
+              <div class="ph-label">Nutty Caramel</div>
+              <div class="ph-upload">+ Add Photo</div>
+            </div>
+            <div class="img-badge">Flavoured</div>
+          </div>
+          <div class="pcard-body">
+            <div class="pcard-cat">Flavoured Coffee</div>
+            <div class="pcard-name">Nutty Caramel</div>
+            <div class="pcard-sub">Instant Coffee</div>
+            <div class="pcard-tags"><span class="ptag">Gluten Free</span><span class="ptag">100% Arabica</span></div>
+            <p class="pcard-desc">Smooth Coorg Arabica with gentle caramel and nutty undertones. Bold coffee character with a sweet, lingering finish.</p>
+            <div class="pcard-variants">
+              <button class="vbtn active" onclick="selSize(this,'caramel',280,'50g')">₹280 / 50g</button>
+              <button class="vbtn" onclick="selSize(this,'caramel',480,'100g')">₹480 / 100g</button>
+            </div>
+            <div class="pcard-foot">
+              <div class="pcard-price" id="price-caramel">₹280 <small>/ 50g</small></div>
+              <button class="btn-cart" id="cart-caramel" onclick="addCart('Nutty Caramel Coffee','flavoured',280,'50g')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Note card for flavoured -->
+        <div class="pcard" data-cat="flavoured" style="background:rgba(160,82,45,.04);border:1px dashed rgba(160,82,45,.2);display:flex;align-items:center;justify-content:center;min-height:200px">
+          <div style="padding:1.5rem;text-align:center">
+            <div style="font-size:2rem;margin-bottom:.8rem">💬</div>
+            <div style="font-family:var(--serif);font-size:1rem;color:var(--copper);margin-bottom:.5rem">Need help choosing?</div>
+            <p style="font-size:.75rem;color:var(--soil);line-height:1.7;font-weight:300;margin-bottom:1rem">Not sure which flavour to try? Take our Coffee Quiz or WhatsApp us — we'll recommend the perfect match for your taste.</p>
+            <a href="#quiz" class="btn-primary" style="font-size:.65rem;padding:.55rem 1.2rem">Take the Quiz →</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="margin-top:1.1rem;padding:.85rem 1.1rem;background:rgba(160,82,45,.06);border-left:3px solid var(--amber);border-radius:0 3px 3px 0;font-size:.75rem;color:var(--soil);line-height:1.7">
+        <strong style="color:var(--copper)">How to order flavoured coffee:</strong> Select your preferred size (50g or 100g), add to cart, then mention your chosen flavour(s) when you place the order via WhatsApp. All 7 flavours are freshly prepared and available in both sizes.
+      </div>
+    </div>
+
+    <!-- ━━━ CATEGORY 3: NORMAL / FILTER COFFEE ━━━ -->
+    <div class="cat-section" id="cat-filter">
+      <div class="cat-header">
+        <div class="cat-icon">🫘</div>
+        <div>
+          <div class="cat-title-text">Filter Coffee</div>
+          <div class="cat-subtitle">100% coffee · Traditional South Indian style · No chicory</div>
+        </div>
+        <div class="cat-count">1 product</div>
+      </div>
+      <div class="pgrid cols-2">
+
+        <!-- Normal Coffee 100% -->
+        <div class="pcard" data-cat="filter">
+          <div class="pcard-img h-220">
+            <div class="img-placeholder" onclick="uploadImg(this)">
+              <div class="ph-icon">🫘</div>
+              <div class="ph-label">Normal Coffee 100%</div>
+              <div class="ph-upload">+ Add Photo</div>
+            </div>
+            <div class="img-badge">100% Coffee</div>
+          </div>
+          <div class="pcard-body">
+            <div class="pcard-cat">Filter Coffee</div>
+            <div class="pcard-name">Aromiq Normal Coffee</div>
+            <div class="pcard-sub">100% Pure Coffee · No Chicory</div>
+            <div class="pcard-tags">
+              <span class="ptag">100% Coffee</span>
+              <span class="ptag">No Chicory</span>
+              <span class="ptag">Pure Roast</span>
+              <span class="ptag">Filter Ready</span>
+            </div>
+            <p class="pcard-desc">Pure, unadulterated coffee — no chicory, no additives. Ground to the perfect coarseness for your traditional South Indian filter. Full-bodied, aromatic, and deeply satisfying from the first pour to the last drop.</p>
+            <div class="pcard-foot">
+              <div class="pcard-price">₹280 <small>/ 250g</small></div>
+              <button class="btn-cart" onclick="addCart('Aromiq Normal Coffee 100%','filter',280,'250g')">+ Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filter Coffee 100% -->
+        <div class="pcard" data-cat="filter">
+          <div class="pcard-img h-220">
+            <div class="img-placeholder" onclick="uploadImg(this)">
+              <div class="ph-icon">☕</div>
+              <div class="ph-label">Filter Coffee 100%</div>
+              <div class="ph-upload">+ Add Photo</div>
+            </div>
+            <div class="img-badge">Filter Coffee</div>
+          </div>
+          <div class="pcard-body">
+            <div class="pcard-cat">Filter Coffee</div>
+            <div class="pcard-name">Aromiq Filter Coffee</div>
+            <div class="pcard-sub">100% Pure Coffee · Filter Grind</div>
+            <div class="pcard-tags">
+              <span class="ptag">100% Coffee</span>
+              <span class="ptag">Premium Roast</span>
+              <span class="ptag">South Indian Style</span>
+              <span class="ptag">Rich & Aromatic</span>
+            </div>
+            <p class="pcard-desc">A classic medium-dark roast ground specifically for the South Indian coffee filter. 100% coffee — pure, rich, aromatic — delivering the authentic filter coffee experience in every cup.</p>
+            <div class="pcard-foot">
+              <div class="pcard-price">₹280 <small>/ 250g</small></div>
+              <button class="btn-cart" onclick="addCart('Aromiq Filter Coffee 100%','filter',280,'250g')">+ Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ━━━ CATEGORY 4: SIGNATURE ━━━ -->
+    <div class="cat-section" id="cat-signature">
+      <div class="cat-header">
+        <div class="cat-icon">✨</div>
+        <div>
+          <div class="cat-title-text">Signature Blend</div>
+          <div class="cat-subtitle">Our crown jewel · Limited estate harvest · Premium Arabica</div>
+        </div>
+        <div class="cat-count">1 product</div>
+      </div>
+      <div class="pgrid cols-3">
+
+        <!-- Gold Blend -->
+        <div class="pcard pcard-signature" data-cat="signature" style="grid-column:2">
+          <div class="ribbon">⭐ Aromiq Signature · Best Seller</div>
+          <div class="pcard-img h-220" style="margin-top:2rem">
+            <div class="img-placeholder" onclick="uploadImg(this)" style="background:linear-gradient(145deg,#2a1800,#5a3800 50%,#3a2000)">
+              <div class="ph-icon">✨</div>
+              <div class="ph-label">Gold Blend · Signature</div>
+              <div class="ph-upload">+ Add Photo</div>
+            </div>
+            <div class="img-badge" style="background:var(--gold);color:var(--ink);border:none">Signature</div>
+          </div>
+          <div class="pcard-body">
+            <div class="pcard-cat" style="color:var(--gold)">Signature Blend</div>
+            <div class="pcard-name">Aromiq Gold Blend</div>
+            <div class="pcard-sub">Premium Instant · 100g</div>
+            <div class="pcard-tags">
+              <span class="ptag">Premium Arabica</span>
+              <span class="ptag">Single Estate</span>
+              <span class="ptag">Freeze Dried</span>
+              <span class="ptag">Limited Harvest</span>
+            </div>
+            <p class="pcard-desc">Our crown jewel. A rare freeze-dried Arabica sourced from the highest elevations of Chikmagalur — revealing layers of wild honey, stone fruit, and a silky lingering finish. This is Aromiq at its finest. For those who truly know coffee.</p>
+            <div class="pcard-foot">
+              <div class="pcard-price" style="color:var(--gold)">₹450 <small>/ 100g</small></div>
+              <button class="btn-cart" style="background:var(--gold);color:var(--ink)" onclick="addCart('Aromiq Gold Blend','signature',450,'100g')">+ Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ WHY US ══ -->
+<section id="why">
+  <div class="container">
+    <div class="eyebrow" style="color:rgba(232,201,138,.5)">Our Promise</div>
+    <h2 class="sec-title" style="color:var(--cream)">Why Coffee Lovers<br><em style="color:var(--wheat)">Choose Aromiq</em></h2>
+    <div class="why-grid">
+      <div class="why-card reveal"><div class="wicon">🌱</div><h3>Direct from Estate</h3><p>No middlemen. Sourced directly from Coorg & Chikmagalur farmers — fresher beans, better taste, fairer prices for the people who grow them.</p></div>
+      <div class="why-card reveal"><div class="wicon">🤲</div><h3>Hand-Selected Beans</h3><p>Only grade-A cherries make it into our products. Our team personally visits each harvest — we reject anything that doesn't meet our exact standard.</p></div>
+      <div class="why-card reveal"><div class="wicon">🔥</div><h3>Small-Batch Roasted</h3><p>Never mass-roasted. Every batch is slow-roasted to unlock complex aromas. The difference in your cup is immediate and unmistakable.</p></div>
+      <div class="why-card reveal"><div class="wicon">📦</div><h3>Sealed Fresh in Glass</h3><p>Packed in airtight glass jars within hours of roasting. Every jar you open should smell like it was roasted this very morning.</p></div>
+      <div class="why-card reveal"><div class="wicon">🚚</div><h3>Pan India Delivery</h3><p>Shipped via Delhivery, Shiprocket & DTDC to every corner of India. Typically delivered within 3–5 business days anywhere in the country.</p></div>
+      <div class="why-card reveal"><div class="wicon">💬</div><h3>Personal Service Always</h3><p>Every order is handled by us personally. Questions, custom orders, corporate gifting — message us on WhatsApp and get a real reply fast.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ REVIEWS ══ -->
+<section id="reviews">
+  <div class="container">
+    <div class="eyebrow">Customer Love</div>
+    <h2 class="sec-title">What Coffee Lovers<br><em>Are Saying</em></h2>
+    <div class="rvgrid">
+      <div class="rcard reveal">
+        <div class="rcard-stars">★★★★★</div>
+        <p class="rcard-text">"The Gold Blend has permanently ruined every other coffee for me. The depth and smoothness is genuinely unlike anything I've had. Ordering my 4th jar now."</p>
+        <div class="rcard-author">Priya Nair, Bangalore</div>
+        <div class="rcard-prod">Aromiq Gold Blend</div>
+      </div>
+      <div class="rcard reveal">
+        <div class="rcard-stars">★★★★★</div>
+        <p class="rcard-text">"The Hazelnut flavoured coffee tastes completely real — not artificial at all. My whole office has switched to Aromiq. We bulk order every single month now."</p>
+        <div class="rcard-author">Arjun Shetty, Mangaluru</div>
+        <div class="rcard-prod">Nutty Hazelnut · 100g</div>
+      </div>
+      <div class="rcard reveal">
+        <div class="rcard-stars">★★★★★</div>
+        <p class="rcard-text">"As a Coorg native, filter coffee is serious business. Aromiq's filter blend is the most authentic I've had outside the estate itself. Fast delivery, premium packaging."</p>
+        <div class="rcard-author">Kavitha Rao, Chennai</div>
+        <div class="rcard-prod">Aromiq Filter Coffee 100%</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ QUIZ ══ -->
+<div id="quiz">
+  <div class="qwrap">
+    <div class="eyebrow" style="justify-content:center">Coffee Finder</div>
+    <h2 class="sec-title" style="color:var(--cream)">Not Sure Which<br><em style="color:var(--wheat)">Coffee Is Yours?</em></h2>
+    <div id="qintro">
+      <p>Answer 3 quick questions — we'll recommend your perfect Aromiq match from across our full collection.</p>
+      <button class="btn-primary" onclick="startQ()">Start the Quiz →</button>
+    </div>
+    <div class="qsteps" id="qsteps">
+      <div class="qprog" id="qprog"><div class="qdot" id="qd0"></div><div class="qdot" id="qd1"></div><div class="qdot" id="qd2"></div></div>
+      <div class="qqtext" id="qqtext"></div>
+      <div class="qopts" id="qopts"></div>
+    </div>
+    <div class="qresult" id="qresult">
+      <h3 id="qrname"></h3>
+      <p id="qrdesc"></p>
+      <button class="btn-primary" id="qrbtn"></button>
+      <button style="background:none;border:none;color:rgba(245,234,214,.35);font-size:.68rem;cursor:pointer;margin-top:.5rem;display:block;margin:0 auto;font-family:var(--sans)" onclick="resetQ()">Retake Quiz</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ BULK ORDERS ══ -->
+<section id="bulk" style="padding:0">
+  <div class="bulk-inner">
+    <div class="bulk-text reveal">
+      <div class="eyebrow">Corporate & Wholesale</div>
+      <h2 class="sec-title" style="color:var(--cream)">Bulk & Corporate<br><em style="color:var(--wheat)">Orders Welcome</em></h2>
+      <p>Offices, cafés, hotels, event companies and gifting buyers — special pricing and custom packaging for bulk orders. Minimum 1kg per product.</p>
+      <div class="bfeats">
+        <div class="bfeat">Special wholesale pricing from 1kg+</div>
+        <div class="bfeat">Custom branded packaging available</div>
+        <div class="bfeat">Corporate gifting sets with premium boxes</div>
+        <div class="bfeat">Priority dispatch and dedicated account support</div>
+        <div class="bfeat">Mix and match across all 13 products in one order</div>
+      </div>
+    </div>
+    <div class="bform reveal">
+      <h3>Send an Enquiry</h3>
+      <div class="fg"><label>Your Name</label><input type="text" id="bn" placeholder="Full name"></div>
+      <div class="frow">
+        <div class="fg"><label>Phone</label><input type="tel" id="bp" placeholder="+91 XXXXX XXXXX"></div>
+        <div class="fg"><label>Email</label><input type="email" id="be" placeholder="you@company.com"></div>
+      </div>
+      <div class="frow">
+        <div class="fg"><label>Quantity needed</label>
+          <select id="bq"><option value="">Select</option><option>1–5 kg</option><option>5–20 kg</option><option>20–50 kg</option><option>50 kg+</option></select>
+        </div>
+        <div class="fg"><label>Purpose</label>
+          <select id="bpur"><option value="">Select</option><option>Office / Workplace</option><option>Café / Restaurant</option><option>Corporate Gifting</option><option>Retail Resale</option><option>Event</option></select>
+        </div>
+      </div>
+      <div class="fg"><label>Message</label><textarea id="bm" rows="3" placeholder="Blend preferences, packaging needs, delivery location..."></textarea></div>
+      <button class="btn-primary" style="width:100%;justify-content:center" onclick="subBulk()">Send via WhatsApp →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══ NEWSLETTER ══ -->
+<div id="nl">
+  <div class="nlwrap reveal">
+    <h2>Join the Aromiq <em style="font-style:italic;color:var(--gold)">Circle</em></h2>
+    <p>Early access to new blends, brewing guides, harvest updates and subscriber-only discounts — 2–3 emails per month. No spam, ever.</p>
+    <div class="nlform">
+      <input class="nlinput" type="email" id="nlEmail" placeholder="your@email.com">
+      <button class="btn-primary" onclick="subNL()">Subscribe</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ CONTACT ══ -->
+<section id="contact">
+  <div class="container">
+    <div class="cgrid">
+      <div class="cinfo reveal">
+        <div class="eyebrow">Get in Touch</div>
+        <h2 class="sec-title">We'd Love to<br><em>Hear From You</em></h2>
+        <p>Questions about your order, a custom blend, wholesale enquiry, or just want to talk coffee? Real people, real answers — we reply fast.</p>
+        <div class="cdetail">
+          <span style="font-size:1rem;flex-shrink:0;margin-top:2px">📧</span>
+          <div><div class="cdlbl">Email</div><div class="cdval">aromiq.co9@gmail.com</div></div>
+        </div>
+        <div class="cdetail">
+          <span style="font-size:1rem;flex-shrink:0;margin-top:2px">📱</span>
+          <div><div class="cdlbl">WhatsApp</div><div class="cdval">+91 97313 54985</div></div>
+        </div>
+        <div class="cdetail">
+          <span style="font-size:1rem;flex-shrink:0;margin-top:2px">📍</span>
+          <div><div class="cdlbl">Origin</div><div class="cdval">Coorg & Chikmagalur, Karnataka</div></div>
+        </div>
+        <div class="cdetail">
+          <span style="font-size:1rem;flex-shrink:0;margin-top:2px">⏰</span>
+          <div><div class="cdlbl">Response Time</div><div class="cdval">Within 4 hours · Mon–Sat · 9am–7pm IST</div></div>
+        </div>
+        <a href="https://wa.me/919731354985?text=Hi%20Aromiq%20Coorg!%20I%20have%20a%20question%20about%20your%20coffee." target="_blank" class="btn-wa">💬 Chat on WhatsApp</a>
+      </div>
+      <div class="cfwrap reveal">
+        <h3>Send a Message</h3>
+        <div class="fg"><label>Your Name</label><input type="text" id="cn" placeholder="e.g. Priya Sharma"></div>
+        <div class="fg"><label>Email Address</label><input type="email" id="ce" placeholder="you@email.com"></div>
+        <div class="fg"><label>Subject</label>
+          <select id="cs"><option value="">Select a topic</option><option>Order enquiry</option><option>Bulk / corporate order</option><option>Delivery question</option><option>Product information</option><option>Other</option></select>
+        </div>
+        <div class="fg"><label>Message</label><textarea id="cm" rows="4" placeholder="How can we help?"></textarea></div>
+        <button class="btn-primary" style="width:100%;justify-content:center" onclick="subContact()">Send Message →</button>
+        <div class="cfok" id="cfok">✓ Message sent! We'll reply within 4 hours.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="ft-top">
+    <div class="ft-brand">
+      <a href="#hero" class="nav-logo" style="font-size:1.25rem">Aromiq<em>.co</em></a>
+      <p>Premium Coorg & Chikmagalur coffee — Instant, Flavoured, Filter & Signature. Roasted with care, delivered across India.</p>
+    </div>
+    <div class="ft-col">
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="#cat-instant">Instant Coffee</a></li>
+        <li><a href="#cat-flavoured">Flavoured Coffee</a></li>
+        <li><a href="#cat-filter">Filter Coffee</a></li>
+        <li><a href="#cat-signature">Gold Blend</a></li>
+        <li><a href="#bulk">Bulk Orders</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>Flavours</h4>
+      <ul>
+        <li><a href="#cat-flavoured">Dark Chocolate</a></li>
+        <li><a href="#cat-flavoured">Cocoa Mint</a></li>
+        <li><a href="#cat-flavoured">Nutty Hazelnut</a></li>
+        <li><a href="#cat-flavoured">French Vanilla</a></li>
+        <li><a href="#cat-flavoured">Fruity Raspberry</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>Help</h4>
+      <ul>
+        <li><a href="#contact">Shipping Info</a></li>
+        <li><a href="#contact">Returns Policy</a></li>
+        <li><a href="#contact">Track My Order</a></li>
+        <li><a href="#bulk">Corporate Gifting</a></li>
+        <li><a href="#quiz">Coffee Quiz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <p>© 2024 Aromiq Coorg · All rights reserved · Coorg & Chikmagalur, Karnataka, India</p>
+    <div class="ft-social">
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+      <a href="https://wa.me/919731354985" target="_blank">WhatsApp</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ══ CART DRAWER ══ -->
+<div class="cart-ov" id="cartOv" onclick="closeCBg(event)">
+  <div class="cart-panel">
+    <div class="cart-hd">
+      <h2>Your Order</h2>
+      <button class="cart-cls" onclick="closeCart()">✕</button>
+    </div>
+    <div class="cart-body" id="cBody">
+      <div class="cart-empty"><p>☕</p><span>Your cart is empty — add some coffee!</span></div>
+    </div>
+    <div class="cart-ft" id="cFt" style="display:none">
+      <div class="cart-total-row">
+        <span>Order Total</span>
+        <strong id="cTotal">₹0</strong>
+      </div>
+      <div class="cart-upi">
+        <p>Pay via UPI after WhatsApp confirmation</p>
+        <div class="utags"><span class="utag">GPay</span><span class="utag">PhonePe</span><span class="utag">Paytm</span></div>
+      </div>
+      <button class="btn-checkout" onclick="checkoutWA()">💬 Order via WhatsApp</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ PROMO POPUP ══ -->
+<div class="promo-ov" id="promoOv">
+  <div class="promo-box">
+    <button class="promo-cls" onclick="closePromo()">✕</button>
+    <div class="promo-top">
+      <h2>Get <em>10% Off</em></h2>
+      <p>Your very first Aromiq Coorg order</p>
+    </div>
+    <div class="promo-body">
+      <p>Mention this code when you place your first order on WhatsApp — we'll deduct 10% from your total!</p>
+      <div class="promo-code">
+        <strong>AROMIQ10</strong>
+        <small>First order only · All products · No minimum order value</small>
+      </div>
+      <button class="btn-primary" style="width:100%;justify-content:center" onclick="proShop()">Shop Now →</button>
+      <span class="promo-skip" onclick="closePromo()">No thanks, I'll pay full price</span>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ── CART ──
+let cart = [];
+
+function addCart(name, cat, price, size) {
+  const k = name + size;
+  const ex = cart.find(i => i.k === k);
+  if(ex) ex.qty++;
+  else cart.push({k, name, cat, price, size, qty: 1});
+  renderCart();
+  showToast(name + ' added to cart ✓');
+}
+
+function renderCart() {
+  const count = cart.reduce((s,i) => s + i.qty, 0);
+  const total = cart.reduce((s,i) => s + i.price * i.qty, 0);
+  document.getElementById('cBadge').textContent = count;
+  const body = document.getElementById('cBody');
+  const ft = document.getElementById('cFt');
+  if(!cart.length) {
+    body.innerHTML = '<div class="cart-empty"><p>☕</p><span>Your cart is empty — add some coffee!</span></div>';
+    ft.style.display = 'none'; return;
+  }
+  ft.style.display = 'block';
+  document.getElementById('cTotal').textContent = '₹' + total.toLocaleString('en-IN');
+  body.innerHTML = cart.map((it, i) => `
+    <div class="citem">
+      <div style="width:44px;height:44px;background:var(--roast);border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0">☕</div>
+      <div class="citem-info">
+        <div class="citem-name">${it.name}</div>
+        <div class="citem-sub">${it.size} · ₹${it.price.toLocaleString('en-IN')} each</div>
+      </div>
+      <div class="citem-qty">
+        <button class="qbtn" onclick="chgQ(${i},-1)">−</button>
+        <span class="qval">${it.qty}</span>
+        <button class="qbtn" onclick="chgQ(${i},1)">+</button>
+      </div>
+      <div class="citem-price">₹${(it.price * it.qty).toLocaleString('en-IN')}</div>
+    </div>`).join('');
+}
+
+function chgQ(i, d) { cart[i].qty += d; if(cart[i].qty <= 0) cart.splice(i,1); renderCart(); }
+function openCart() { document.getElementById('cartOv').classList.add('open'); }
+function closeCart() { document.getElementById('cartOv').classList.remove('open'); }
+function closeCBg(e) { if(e.target === document.getElementById('cartOv')) closeCart(); }
+
+function checkoutWA() {
+  if(!cart.length) return;
+  const total = cart.reduce((s,i) => s + i.price * i.qty, 0);
+  const lines = cart.map(i => `• ${i.name} (${i.size}) x${i.qty} = ₹${(i.price*i.qty).toLocaleString('en-IN')}`).join('%0A');
+  const msg = `Hi Aromiq Coorg! 🙏 I'd like to place an order:%0A%0A${lines}%0A%0A*Total: ₹${total.toLocaleString('en-IN')}*%0A%0APlease confirm availability and share UPI payment details. Thank you!`;
+  window.open(`https://wa.me/919731354985?text=${msg}`, '_blank');
+}
+
+// ── SIZE VARIANT SELECTOR ──
+function selSize(btn, id, price, size) {
+  btn.closest('.pcard-variants').querySelectorAll('.vbtn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  // update displayed price
+  const priceEl = document.getElementById('price-' + id);
+  if(priceEl) priceEl.innerHTML = '₹' + price + ' <small>/ ' + size + '</small>';
+  // update cart button
+  const cartBtn = document.getElementById('cart-' + id);
+  if(cartBtn) {
+    const name = btn.closest('.pcard').querySelector('.pcard-name').textContent;
+    cartBtn.setAttribute('onclick', `addCart('${name} Coffee','flavoured',${price},'${size}')`);
+  }
+}
+
+// ── CATEGORY FILTER ──
+function filterCat(cat, btn) {
+  document.querySelectorAll('.ftab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  const sections = { instant: 'cat-instant', flavoured: 'cat-flavoured', filter: 'cat-filter', signature: 'cat-signature' };
+  if(cat === 'all') {
+    Object.values(sections).forEach(id => { const el = document.getElementById(id); if(el) el.hidden = false; });
+  } else {
+    Object.entries(sections).forEach(([k, id]) => {
+      const el = document.getElementById(id);
+      if(el) el.hidden = k !== cat;
+    });
+  }
+}
+
+// ── QUIZ ──
+const QD = [
+  { q: 'How strong do you like your coffee?', opts: ['Extra strong & bold', 'Medium & balanced', 'Light & smooth'] },
+  { q: 'Do you prefer classic or flavoured coffee?', opts: ['Classic — pure coffee taste', 'Flavoured — something exciting', 'Not sure — recommend me'] },
+  { q: 'What matters most to you in a cup of coffee?', opts: ['Pure, deep coffee flavour', 'A sweet, indulgent experience', 'Something unique & adventurous'] }
+];
+let qa = [], qs = 0;
+
+function startQ() {
+  document.getElementById('qintro').style.display = 'none';
+  document.getElementById('qsteps').style.display = 'block';
+  qs = 0; qa = []; showQQ();
+}
+function showQQ() {
+  document.getElementById('qqtext').textContent = QD[qs].q;
+  document.getElementById('qopts').innerHTML = QD[qs].opts.map((o,i) => `<button class="qopt" onclick="qAns(${i})">${o}</button>`).join('');
+  document.querySelectorAll('.qdot').forEach((el,i) => el.className = 'qdot' + (i < qs ? ' done' : ''));
+}
+function qAns(i) { qa.push(i); qs++; if(qs < QD.length) { showQQ(); return; } showQR(); }
+function showQR() {
+  document.getElementById('qsteps').style.display = 'none';
+  document.getElementById('qresult').style.display = 'block';
+  let name, desc, addFn;
+  if(qa[0] === 0 && qa[1] === 0) {
+    name = 'Coorg Special Extra Strong'; desc = 'You want power and boldness. Our Extra Strong Coorg Special — robust Arabica & Robusta — hits exactly as hard as you need.';
+    addFn = () => addCart('Coorg Special Extra Strong','instant',350,'100g');
+  } else if(qa[1] === 0 || qa[2] === 0) {
+    name = 'Aromiq Gold Blend'; desc = 'You are a true coffee connoisseur. Our Signature Gold Blend — rare single-estate Arabica — is pure, layered and extraordinary.';
+    addFn = () => addCart('Aromiq Gold Blend','signature',450,'100g');
+  } else if(qa[2] === 2) {
+    name = 'Fruity Raspberry'; desc = 'You love adventure in your cup. Our Raspberry is vibrant, bold and completely unique — the perfect choice for curious coffee explorers.';
+    addFn = () => addCart('Fruity Raspberry Coffee','flavoured',280,'50g');
+  } else if(qa[2] === 1) {
+    name = 'Nutty Hazelnut'; desc = 'You love sweet and indulgent. Our Hazelnut is bold Coorg Arabica with the warm, buttery taste of roasted hazelnuts — bold and smooth.';
+    addFn = () => addCart('Nutty Hazelnut Coffee','flavoured',280,'50g');
+  } else {
+    name = 'French Vanilla'; desc = 'You love a classic, comforting cup. Our French Vanilla is aromatic Coorg Arabica with creamy vanilla warmth — smooth and effortlessly elegant.';
+    addFn = () => addCart('French Vanilla Coffee','flavoured',280,'50g');
+  }
+  document.getElementById('qrname').textContent = 'Your Match: ' + name;
+  document.getElementById('qrdesc').textContent = desc;
+  const btn = document.getElementById('qrbtn');
+  btn.textContent = 'Add ' + name + ' to Cart →';
+  btn.onclick = () => { addFn(); openCart(); };
+}
+function resetQ() {
+  document.getElementById('qresult').style.display = 'none';
+  document.getElementById('qintro').style.display = 'block';
+}
+
+// ── FORMS ──
+function subBulk() {
+  const n = document.getElementById('bn').value.trim();
+  const p = document.getElementById('bp').value.trim();
+  if(!n || !p) { showToast('Please enter your name and phone number'); return; }
+  const q = document.getElementById('bq').value || 'TBD';
+  const pur = document.getElementById('bpur').value || 'TBD';
+  const m = document.getElementById('bm').value.trim();
+  const msg = `Hi Aromiq Coorg! Bulk order enquiry:%0AName: ${n}%0APhone: ${p}%0AQuantity: ${q}%0APurpose: ${pur}${m ? '%0AMessage: ' + m : ''}%0A%0APlease contact me. Thank you!`;
+  window.open(`https://wa.me/919731354985?text=${msg}`, '_blank');
+}
+
+function subContact() {
+  const n = document.getElementById('cn').value.trim();
+  const e = document.getElementById('ce').value.trim();
+  const m = document.getElementById('cm').value.trim();
+  if(!n || !e || !m) { showToast('Please fill in all fields'); return; }
+  const ok = document.getElementById('cfok');
+  ok.style.display = 'block';
+  ['cn','ce','cm'].forEach(id => document.getElementById(id).value = '');
+  setTimeout(() => ok.style.display = 'none', 5000);
+}
+
+function subNL() {
+  const e = document.getElementById('nlEmail').value.trim();
+  if(!e || !e.includes('@')) { showToast('Please enter a valid email address'); return; }
+  showToast('Welcome to the Aromiq Circle ✓');
+  document.getElementById('nlEmail').value = '';
+}
+
+// ── PROMO ──
+function closePromo() { document.getElementById('promoOv').classList.remove('open'); }
+function proShop() { closePromo(); document.getElementById('products').scrollIntoView({behavior:'smooth'}); }
+setTimeout(() => {
+  if(!sessionStorage.getItem('promoSeen')) {
+    document.getElementById('promoOv').classList.add('open');
+    sessionStorage.setItem('promoSeen','1');
+  }
+}, 3500);
+
+// ── TOAST ──
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+// ── PHOTO UPLOAD PLACEHOLDER ──
+function uploadImg(el) {
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = 'image/*';
+  input.onchange = e => {
+    const file = e.target.files[0];
+    if(!file) return;
+    const reader = new FileReader();
+    reader.onload = ev => {
+      const imgWrap = el.closest('.pcard-img');
+      imgWrap.innerHTML = `<img src="${ev.target.result}" alt="Product" style="width:100%;height:100%;object-fit:cover;display:block">`;
+      showToast('Photo added! ✓');
+    };
+    reader.readAsDataURL(file);
+  };
+  input.click();
+}
+
+// ── NAV ──
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60);
+});
+let navOpen = false;
+function toggleNav() {
+  navOpen = !navOpen;
+  const ul = document.querySelector('.nav-links');
+  ul.style.cssText = navOpen
+    ? 'display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(28,16,7,.97);padding:1.2rem 5%;gap:1rem;border-top:1px solid rgba(212,162,86,.1);z-index:999'
+    : 'display:none';
+}
+
+// ── SCROLL REVEAL ──
+const revObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
+
+const cardObs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if(e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 60);
+  });
+}, { threshold: 0.05 });
+document.querySelectorAll('.pcard').forEach(el => cardObs.observe(el));
+</script>
+</body>
+</html>
